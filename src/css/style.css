@@ -3,35 +3,48 @@
 	margin: 0;
 	padding: 0;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	color: blue;
+	color: hotpink
 }
 :root {
 	--blue: #39add1;
 }
 html {
 	height: max-content;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';
+	font-family: sans-serif;
+	background-color: grey;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	height: fit-content;
 }
+
 a{
 	color: red;
 }
 ul {
 	list-style-type: none;
 }
-.card{
-	border: 1px solid maroon;
-	border-radius: 5rem;
+
+.card,
+.new-card {
+	border: 1px solid var(--blue);
+	border-radius: 1rem;
 	display: grid;
-	flex-basis: calc(50% - 2rem);
-	grid-template-columns: 50fr 1fr;
-	margin: 2rem;
-	padding: 2rem;
+	flex-basis: calc(33% - 2rem);
+	grid-template-columns: 8fr 2fr;
+	margin: 1rem;
+	padding: 1rem;
 }
 .card > footer,
-.card > header{
-	grid-column: 1/0;
+.card > header {
+	grid-column: 1/-1;
 }
-.card > header button{
+.card > header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.card > header button {
 	align-self: flex-start;
 	border: none;
 	cursor: pointer;
@@ -39,15 +52,26 @@ ul {
 	line-height: 0;
 	transform: rotateZ(45deg);
 }
-.card > header button:focus{
+.card > header button:focus {
 	outline: none;
 }
-.cards{
+.card > main p {
+	margin: .5rem 0;
+}
+.cards {
 	display: flex;
-	flex-wrap: wrap-reverse;
+	flex-wrap: wrap;
 }
 .container {
 	display: grid;
+	grid-template-columns: 0.7fr 0.3fr;
+	grid-template-rows: 100px auto 200px;
+	min-height: 100vh;
+}
+.container > aside {
+	display: flex;
+	grid-column: -2/-1;
+	margin: .5rem;
 }
 .container > footer,
 .container > header {
@@ -55,22 +79,21 @@ ul {
 }
 .container > footer {
 	align-items: center;
-	border-top: 1px solid pink;
-	/* display: flex; */
+	border-top: 1px solid var(--blue);
+	display: flex;
 	justify-content: center;
 }
 .container > header {
-	align-items: baseline;
-	border-bottom: 1px solid;
-	display: grid;
+	align-items: center;
+	border-bottom: 1px solid var(--blue);
+	display: flex;
 	justify-content: space-between;
 }
 .container > header h1 {
-	margin-left: 30rem;
+	margin-left: 1rem;
 }
 .container > header nav {
-	margin-right: 1.5rem;
-	margin-top: 1.5rem;
+	margin-right: 1rem;
 	position: relative;
 }
 .container > header nav ul {
@@ -87,7 +110,7 @@ ul {
 	padding: 0.5rem 1rem;
 	text-decoration: none;
 }
-.container > headernav ul li.active a {
+.container > header nav ul li.active a {
 	background-color: var(--pink);
 	color: pink;
 }
@@ -107,49 +130,44 @@ ul {
 }
 .new-card * {
 	margin-bottom: 1rem;
-	margin-left:  3rem;
 }
 .new-card input,
 .new-card textarea {
-	margin-left: 3rem;
-	border: 1px solid pink;
+	border: 1px solid var(--blue);
 	display: block;
-	padding: 0.5rem;
+	padding: 0.25rem;
 	width: 100%;
 }
 .new-card form {
 	grid-column: 1 / -1;
 }
+.news-feed-card {
+	border: 1px solid var(--blue);
+	border-radius: 1rem;
+	margin: 1rem 0;
+	padding: 1rem;
+}
 .news-feed-card:first-child {
-	border: 1px solid pink;
+	border: 1px solid var(--blue);
 	margin-top: 0;
 }
 #index{
 	display: flex;
-	min-height: 103vh;
+	min-height: 100vh;
 	background-image: url(../images/greybrain.jpg);	
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 #aboutMe{
-	display: flex;
+	display: grid;
 	min-height: 100vh;
-	background-repeat: no-repeat;
-	background-size: cover;
 	background-image: url(../images/greybrain.jpg);
 }
-#projects{
+#project{
 	display: flex;
 	min-height: 100vh;
-	background-repeat: no-repeat;
-	background-size: cover;
 	background-image: url(../images/greybrain.jpg);
 }
 #contact{
 	display: flex;
-	min-height: 200vh;
-	background-repeat: no-repeat;
+	min-height: 100vh;
 	background-image: url(../images/greybrain.jpg); 
-	background-size: cover;
-	
 }
